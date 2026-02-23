@@ -2,6 +2,7 @@
 
 This is a complete LaTeX project to write an HDR (Habilitation à Diriger des Recherches)
 manuscript for Université Savoie Mont Blanc.
+It's based on the [offical docx template](https://www.univ-smb.fr/college-doctoral/wp-content/uploads/sites/92/2022/06/07-page-de-garde-hdr.docx)
 
 ## Project structure
 
