@@ -1,0 +1,83 @@
+%% main.tex  –  HDR Manuscript
+%% Université Savoie Mont Blanc
+%%
+%% Compile with: pdflatex  →  bibtex  →  pdflatex  →  pdflatex
+%% Or with latexmk: latexmk -pdf main.tex
+
+\documentclass[12pt]{hdr-usmb}
+
+% ── Extra macros & environments ───────────────────────────────────────────
+\usepackage{hdr-extras}
+
+% ══════════════════════════════════════════════════════════════════════════
+%  METADATA  –  Fill in your details here
+% ══════════════════════════════════════════════════════════════════════════
+\hdrAuthor    {Author's name}
+\hdrTitle     {Title}
+\hdrSpeciality{Speciality}       % e.g. Mathématiques, Physique, Informatique …
+\hdrDate      {JJ mois AAAA}
+\hdrLogo      {logos/Logo_USMB_impression_niveau_de_gris}  
+% \hdrLogo      {logos/Logo_USMB_impression_CMJN}  
+
+% ── Jury members: \juryMember{Name}{Function & location}{Role} ───────────
+\juryMember{Pr. Civilité Prénom NOM}
+           {Professeur des Universités, Université X}
+           {Rapporteur}
+\juryMember{Pr. Civilité Prénom NOM}
+           {Directeur de Recherche CNRS, Laboratoire Y}
+           {Rapporteur}
+\juryMember{Pr. Civilité Prénom NOM}
+           {Professeur des Universités, Université Z}
+           {Président}
+\juryMember{Dr. Civilité Prénom NOM}
+           {Maître de Conférences, Université A}
+           {Membre}
+\juryMember{Pr. Civilité Prénom NOM}
+           {Professeur des Universités, Université B}
+           {Membre}
+\juryMember{Dr. Civilité Prénom NOM}
+           {Chargé de Recherche, Organisme C}
+           {Membre}
+
+% ═══════════════════════════════════════════════════════════════════════════
+
+\begin{document}
+
+% ─────────────────────────────────────────────
+%  FRONT MATTER
+% ─────────────────────────────────────────────
+\frontmatter
+
+\makecover                          % cover page (page de garde)
+
+\include{front/acknowledgements}    % remerciements
+\include{front/abstract}            % résumé / abstract
+\include{front/publications}        % liste des publications
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% ─────────────────────────────────────────────
+%  MAIN MATTER
+% ─────────────────────────────────────────────
+\mainmatter
+
+\include{chapters/ch01-introduction}
+\include{chapters/ch02-scientific-context}
+\include{chapters/ch03-contributions}
+\include{chapters/ch04-synthesis}
+\include{chapters/ch05-perspectives}
+
+% ─────────────────────────────────────────────
+%  BACK MATTER
+% ─────────────────────────────────────────────
+\backmatter
+
+\include{appendices/appendix-a}
+
+% Bibliography
+\bibliographystyle{apalike}         % or plainnat, unsrtnat, etc.
+\bibliography{references}
+
+\end{document}
