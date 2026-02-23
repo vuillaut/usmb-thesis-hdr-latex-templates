@@ -1,0 +1,81 @@
+%% main.tex  –  Thèse de Doctorat
+%% Université Savoie Mont Blanc
+%%
+%% Compile: latexmk -pdf main.tex
+%% Or:      pdflatex → bibtex → pdflatex → pdflatex
+
+\documentclass[12pt]{these-usmb}
+
+\usepackage{these-extras}
+
+% ══════════════════════════════════════════════════════════════════════════
+%  MÉTADONNÉES  — remplir ici
+% ══════════════════════════════════════════════════════════════════════════
+\theseAuthor     {Prénom NOM}
+\theseTitle      {Titre de la thèse}
+\theseSpeciality {Informatique}
+\theseDate       {JJ mois AAAA}
+\theseDirecteur  {Pr. Prénom NOM, Université Savoie Mont Blanc}
+\theseLaboratoire{Nom du Laboratoire (ACRONYME)}
+\theseEcoleDoc   {École Doctorale Siseo / Cultures, Sociétés, Territoires / \ldots}
+\theseLogo       {logos/usmb-logo}   % sans extension, ou avec (.png, .jpeg…)
+
+% ── Membres du jury : \juryMember{Nom}{Fonction et lieu}{Rôle} ───────────
+% Entre 5 et 8 membres. Le/la directeur.ice de thèse est membre du jury.
+\juryMember{Pr. Civilité Prénom NOM}
+           {Professeur.e des Universités, Université X}
+           {Président.e}
+\juryMember{Pr. Civilité Prénom NOM}
+           {Professeur.e des Universités, Université Y}
+           {Rapporteur.e}
+\juryMember{Pr. Civilité Prénom NOM}
+           {Directeur.ice de Recherche CNRS, Laboratoire Z}
+           {Rapporteur.e}
+\juryMember{Dr. Civilité Prénom NOM}
+           {Maître.sse de Conférences, Université A}
+           {Examinateur.ice}
+\juryMember{Pr. Civilité Prénom NOM}
+           {Professeur.e des Universités, Université Savoie Mont Blanc}
+           {Directeur.ice de thèse}
+
+% ══════════════════════════════════════════════════════════════════════════
+
+\begin{document}
+
+% ─────────────────────────────────────────────
+%  FRONT MATTER
+% ─────────────────────────────────────────────
+\frontmatter
+
+\makecover                           % page de garde
+
+\include{front/dedication}           % dédicace (optionnel)
+\include{front/acknowledgements}     % remerciements
+\include{front/abstract}             % résumé / abstract
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% ─────────────────────────────────────────────
+%  MAIN MATTER
+% ─────────────────────────────────────────────
+\mainmatter
+
+\include{chapters/ch01-introduction}
+\include{chapters/ch02-etat-de-lart}
+\include{chapters/ch03-contributions}
+\include{chapters/ch04-experimentation}
+\include{chapters/ch05-conclusion}
+
+% ─────────────────────────────────────────────
+%  BACK MATTER
+% ─────────────────────────────────────────────
+\backmatter
+
+\include{appendices/appendix-a}
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}

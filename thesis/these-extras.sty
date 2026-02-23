@@ -1,0 +1,71 @@
+%% these-extras.sty
+%% Environnements et macros supplémentaires pour la thèse USMB
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{these-extras}[2024/01/01 These USMB extra macros]
+
+\RequirePackage{tcolorbox}
+\RequirePackage{mdframed}
+\RequirePackage{pgfplots}
+\RequirePackage{tikz}
+\RequirePackage{siunitx}
+\RequirePackage{multirow}
+\RequirePackage{longtable}
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+\RequirePackage{listings}
+\RequirePackage{natbib}
+
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, positioning, calc, shapes.geometric}
+
+% ── tcolorbox styles ──────────────────────────────────────────────────────
+\tcbuselibrary{skins, breakable, theorems}
+
+\tcbset{
+  keyresult/.style={
+    enhanced, colback=usmb@blue!5, colframe=usmb@blue,
+    fonttitle=\bfseries, breakable,
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+  },
+  contribution/.style={
+    enhanced, colback=usmb@red!5, colframe=usmb@red,
+    fonttitle=\bfseries, breakable,
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+  }
+}
+
+\newenvironment{keyresult}[1][Résultat clé]{%
+  \begin{tcolorbox}[keyresult, title=#1]}{\end{tcolorbox}}
+
+\newenvironment{contribution}[1][Contribution]{%
+  \begin{tcolorbox}[contribution, title=#1]}{\end{tcolorbox}}
+
+% ── Résumé bilingue ───────────────────────────────────────────────────────
+\newenvironment{theseabstract}[1][Résumé]{%
+  \begin{mdframed}[
+    linecolor=usmb@blue, linewidth=1pt,
+    innerleftmargin=10pt, innerrightmargin=10pt,
+    innertopmargin=8pt, innerbottommargin=8pt,
+  ]%
+  \paragraph*{\color{usmb@blue}#1}\mbox{}\\[2pt]%
+}{%
+  \end{mdframed}%
+}
+
+% ── Listings ──────────────────────────────────────────────────────────────
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\bfseries\color{usmb@blue},
+  commentstyle=\itshape\color{usmb@grey},
+  stringstyle=\color{usmb@red},
+  numbers=left, numberstyle=\tiny\color{usmb@grey},
+  stepnumber=1, numbersep=8pt,
+  backgroundcolor=\color{usmb@lgrey},
+  showstringspaces=false, breaklines=true,
+  frame=single, framerule=0.4pt,
+  rulecolor=\color{usmb@grey},
+  tabsize=2, captionpos=b,
+}
+
+\endinput
